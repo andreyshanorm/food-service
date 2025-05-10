@@ -1,0 +1,32 @@
+.button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.25s;
+  border: none;
+  color: var(--white-color);
+  font-style: normal;
+    font-weight: 400;
+}
+
+.accent:hover {
+  background: var(--primary-hover-color);
+}
+
+.accent {
+  background: var(--primary-color);
+}
+
+.small{
+  border-radius: 29px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 10px 25px;
+}
+
+.big{
+  border-radius: 29px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 20px 60px;
+}
