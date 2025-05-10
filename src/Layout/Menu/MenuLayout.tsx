@@ -16,7 +16,7 @@ export default function Layout() {
                         src="./upavatar.png"
                         alt="Аватар пользователя"
                     />
-                    <div className={styles["name"]}>Имя</div>
+                    <div className={styles["name"]}>Имgя</div>
                     <div className={styles["email"]}>Мыло</div>
                 </div>
                 <div className={styles["menu"]}>
