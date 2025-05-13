@@ -1,4 +1,4 @@
-import React, { useEffect, useState, type FormEvent } from "react";
+import { useEffect, type FormEvent } from "react";
 import Header from "../../components/Header/Header";
 import styles from "./Login.module.css";
 import Input from "../../components/input/Input";
@@ -6,7 +6,7 @@ import Button from "../../components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../../store/store";
-import { getProfile, login, userActions } from "../../store/user.slice";
+import { login, userActions } from "../../store/user.slice";
 
 export type LoginForm = {
 	email: {

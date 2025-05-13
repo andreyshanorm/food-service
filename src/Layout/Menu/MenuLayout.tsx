@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import styles from "./MenuLayout.module.css";
 import CartIcon from "../../assets/Pathcart.svg";
@@ -7,7 +7,7 @@ import ExitIcon from "../../assets/exitIcon.svg";
 import cn from "classNames";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../../store/store";
-import { getProfile, login, userActions } from "../../store/user.slice";
+import { getProfile, userActions } from "../../store/user.slice";
 import { useEffect } from "react";
 
 export default function Layout() {

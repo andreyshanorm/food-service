@@ -1,7 +1,6 @@
 import {
 	createAsyncThunk,
 	createSlice,
-	type PayloadAction,
 } from "@reduxjs/toolkit";
 import { loadState } from "./storage";
 import { PREFIX } from "../api/Api";

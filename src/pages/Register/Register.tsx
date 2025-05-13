@@ -1,4 +1,4 @@
-import React, { useEffect, type FormEvent } from 'react'
+import { useEffect, type FormEvent } from 'react'
 import styles from './Register.module.css'
 import Header from '../../components/Header/Header';
 import { useDispatch, useSelector } from 'react-redux';
