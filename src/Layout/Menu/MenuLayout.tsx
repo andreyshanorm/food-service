@@ -18,6 +18,7 @@ export default function Layout() {
         navigate('/auth/login')
     }
     const { jwt, name, email } = useSelector((state: RootState) => state.user);
+    const { items } = useSelector((state: RootState) => state.cart)
 
     useEffect(() => {
         if(jwt){
@@ -60,7 +61,9 @@ export default function Layout() {
                         <img src={CartIcon} alt="Иконка корзины" />
                         <div>
                             <span>Корзина</span>
-                            <span className={styles["cart-count"]}>2</span>
+                            <span className={cn(styles["cart-count"], {
+                              [styles["disabled"]]: items.length === 0
+                            })}>{items.reduce((acc, item) => acc +=item.count ,0)}</span>
                         </div>{" "}
                     </NavLink>
                 </div>
