@@ -7,7 +7,7 @@ import ExitIcon from "../../assets/exitIcon.svg";
 import cn from "classNames";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../../store/store";
-import { userActions } from "../../store/user.slice";
+import { getProfile, login, userActions } from "../../store/user.slice";
 import { useEffect } from "react";
 
 export default function Layout() {
@@ -20,7 +20,9 @@ export default function Layout() {
     const { jwt, name, email } = useSelector((state: RootState) => state.user);
 
     useEffect(() => {
-        // dispatch(userActions.getProfile(jwt))
+        if(jwt){
+            dispatch(getProfile(jwt))
+        }
     }, [jwt])
 
     return (

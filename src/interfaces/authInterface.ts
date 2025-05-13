@@ -1,4 +1,4 @@
-export interface LoginResponce {
+export interface LoginAndRegisterResponce {
     access_token: string
 }
 

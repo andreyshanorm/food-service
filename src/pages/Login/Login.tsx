@@ -20,12 +20,11 @@ export type LoginForm = {
 export default function Login() {
     const navigate = useNavigate()
 	const dispatch = useDispatch<AppDispatch>()
-	const {jwt, loginMessage} = useSelector((state: RootState) => state.user)
+	const {jwt, ErrorMessage} = useSelector((state: RootState) => state.user)
 
 	useEffect(() => {
 		if(jwt){
 			navigate('/')
-			dispatch(getProfile(jwt));
 		}
 	}, [jwt]);
 
@@ -45,7 +44,7 @@ export default function Login() {
 	return (
 		<div className={styles["login"]}>
 			<Header>Вход</Header>
-			{loginMessage && <div className={styles["error"]}>{loginMessage}</div>}
+			{ErrorMessage && <div className={styles["error"]}>{ErrorMessage}</div>}
 			<form className={styles["form"]} onSubmit={submit}>
 				<div className={styles["field"]}>
 					<label htmlFor="email">Ваш email</label>
