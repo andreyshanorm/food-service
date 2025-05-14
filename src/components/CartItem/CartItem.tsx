@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styles from './CartItem.module.css'
 import type { CartItemProps } from './CartItem.props';
 import plusIcon from '../../assets/plus.svg'

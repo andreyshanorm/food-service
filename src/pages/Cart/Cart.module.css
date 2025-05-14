@@ -3,7 +3,7 @@
 }
 
 .line {
-    max-width: 512px;
+    width: 512px;
     display: flex;
     justify-content: space-between;
     padding: 17px 0;
@@ -44,16 +44,16 @@
 }
 
 .checkout {
-    max-width: 512px;
+    width: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 70px;
 }
 
-.product-list{
-    margin-top: 30px;
+.cart-content{
+    margin: 50px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }

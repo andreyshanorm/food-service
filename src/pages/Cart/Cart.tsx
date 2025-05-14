@@ -8,7 +8,9 @@ import type { Product } from "../../interfaces/product";
 import { PREFIX } from "../../api/Api";
 import { useEffect, useState } from "react";
 import { CartItem } from "../../components/CartItem/CartItem";
+import Button from "../../components/Button/Button";
 
+const DELIVERY_FEE = 160
 
 export default function Cart() {
     const [cartProducts, setCartProducts] = useState<Product[]>([])
@@ -42,27 +44,56 @@ export default function Cart() {
 
     return (
 		<>
-			<div className={styles["head"]}>
+			<div className={styles["cart"]}>
 				<Header>Корзина</Header>
-				<div className={styles["product-list"]}>
-					{items.map((item) => {
-						const productInCart = cartProducts.find(
-							(p) => p.id === item.id
-						);
-						if (!productInCart) {
-							return;
-						}
-						return (
-							<CartItem
-								key={productInCart.id}
-								count={item.count}
-								{...productInCart}
-							/>
-						);
-					})}
-				</div>
-                <div className={styles["total-price"]}>
-					{total}
+				<div className={styles["cart-content"]}>
+					<div className={styles["product-list"]}>
+						{items.map((item) => {
+							const productInCart = cartProducts.find(
+								(p) => p.id === item.id
+							);
+							if (!productInCart) {
+								return;
+							}
+							return (
+								<CartItem
+									key={productInCart.id}
+									count={item.count}
+									{...productInCart}
+								/>
+							);
+						})}
+					</div>
+					<div className={styles["line"]}>
+						<div className={styles["text"]}>Итог</div>
+						<div className={styles["price"]}>
+							{total}&nbsp;<span>₽</span>
+						</div>
+					</div>
+					<hr className={styles["hr"]} />
+					<div className={styles["line"]}>
+						<div className={styles["text"]}>Доставка</div>
+						<div className={styles["price"]}>
+							{DELIVERY_FEE}&nbsp;<span>₽</span>
+						</div>
+					</div>
+					<hr className={styles["hr"]} />
+					<div className={styles["line"]}>
+						<div className={styles["text"]}>
+							Итог{" "}
+							<span className={styles["total-count"]}>
+								({items.length})
+							</span>
+						</div>
+						<div className={styles["price"]}>
+							{total + DELIVERY_FEE}&nbsp;<span>₽</span>
+						</div>
+					</div>
+					<div className={styles["checkout"]}>
+						<Button appearence="big">
+							оформить
+						</Button>
+					</div>
 				</div>
 			</div>
 		</>

@@ -7,6 +7,7 @@
 .card {
     background: var(--white-color);
     border-radius: 19px;
+    background-repeat: no-repeat;
     box-shadow: 18.21428680419922px 18.21428680419922px 36.42857360839844px 0px rgba(211, 209, 216, 0.25);
     width: 320px;
 }
